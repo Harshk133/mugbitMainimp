@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MugBit Beta!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="MugBit.PNG" type="image/x-icon">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">MugBit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documentation</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <main id="main">
+        <center>
+            <h3>
+                Welcome <%= locals.username || "Hello User" %>, to MugBit!
+            </h3>
+        </center>
+
+        <div class="card-container">
+            <div class="card" style="width: 18rem;">
+                <img src="MugBit.PNG" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">MugBit</h5>
+                    <p class="card-text">Now Create Your Microprojects <br> Very Quickly!</p>
+                    <a href="#" class="btn btn-primary">Documentation</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="msdocument.jfif" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">Certificate</h5>
+                    <p class="card-text">Computer Branch Certificate For You!</p>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Use This!
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card" style="width: 18rem;">
+                <img src="msdocument.jfif" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">EST Microproject</h5>
+                    <p class="card-text">Microproject For You!</p>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Use This!
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="msdocument.jfif" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">CSS Microproject</h5>
+                    <p class="card-text">Microproject For You!</p>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#css">
+                        Use This!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            MugBit Copyright &copy; <span id="id"></span>
+        </center>
+    </footer>
+
+
+
+    <!-- Modal -->
+    <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/certificate" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Enter Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="enrollmentno" class="form-label">Enter Your Enrollment Number</label>
+                            <input type="text" class="form-control" id="enrollmentno" name="enrollmentno"
+                                aria-describedby="enrollmentnoHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="coi" class="form-label">Enter Your COI</label>
+                            <input type="text" class="form-control" id="coi" name="coi" aria-describedby="coiHelp"
+                                placeholder="For example, CO5I">
+                        </div>
+                        <div class="mb-3">
+                            <label for="micorprojecttitle" class="form-label">Enter Your Microproject Title</label>
+                            <input type="text" class="form-control" id="micorprojecttitle" name="micorprojecttitle"
+                                aria-describedby="micorprojecttitleHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cosubject" class="form-label">Enter Your Subject</label>
+                            <input type="text" class="form-control" id="cosubject" name="cosubject"
+                                aria-describedby="cosubjectHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="teachername" class="form-label">Enter Your Teacher Name</label>
+                            <input type="text" class="form-control" id="teachername" name="teachername"
+                                aria-describedby="teachernameHelp">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Done</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/microproject" method="post">
+                        <div class="mb-3">
+                            <label for="Mname" class="form-label">Enter Your Name</label>
+                            <input type="text" class="form-control" id="Mname" name="Mname"
+                                aria-describedby="MnameHelp">
+
+                            <label for="Menrollmentno" class="form-label">Enter Your Enrollment Number</label>
+                            <input type="text" class="form-control" id="Menrollmentno" name="Menrollmentno"
+                                aria-describedby="MenrollmentnoHelp">
+
+                            <label for="Mrollno" class="form-label">Enter Your Roll Number</label>
+                            <input type="text" class="form-control" id="Mrollno" name="Mrollno"
+                                aria-describedby="MrollnoHelp">
+
+                            <label for="Mteacher" class="form-label">Enter Your Teacher Name</label>
+                            <input type="text" class="form-control" id="Mteacher" name="Mteacher"
+                                aria-describedby="MteacherHelp">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Done</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="css" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/mcss" method="post">
+                        <label for="mcssname" class="form-label">Enter Your Name</label>
+                        <input type="text" class="form-control" id="mcssname" name="mcssname" aria-describedby="mcssnameHelp">
+
+                        <label for="mcssenrollment" class="form-label">Enter Your Enrollment Number</label>
+                        <input type="text" class="form-control" id="mcssenrollment" name="mcssenrollment" aria-describedby="mcssenrollmentHelp">
+
+                        <label for="mcssenrollno" class="form-label">Enter Your Roll Number</label>
+                        <input type="text" class="form-control" id="mcssenrollno" name="mcssenrollno" aria-describedby="mcssenrollnoHelp">
+
+                        <label for="mcssteacher" class="form-label">Enter Your Teacher Name</label>
+                        <input type="text" class="form-control" id="mcssteacher" name="mcssteacher" aria-describedby="mcssteacherHelp">
+                        <button type="submit" class="btn btn-primary">Done</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById("id").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
