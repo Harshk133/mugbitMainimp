@@ -38,7 +38,7 @@
     <main id="main">
         <center>
             <h3>
-                Welcome <%= locals.username || "Hello User" %>, to MugBit!
+                Welcome to MugBit!
             </h3>
         </center>
 
@@ -82,10 +82,11 @@
             <div class="card" style="width: 18rem;">
                 <img src="msdocument.jfif" class="card-img-top" alt="Image">
                 <div class="card-body">
-                    <h5 class="card-title">CSS Microproject</h5>
-                    <p class="card-text">Microproject For You!</p>
+                    <h5 class="card-title">Civil Certificate</h5>
+                    <p class="card-text">Civil Certificate For You!</p>
 
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#css">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#CivilCertificate">
                         Use This!
                     </button>
                 </div>
@@ -159,21 +160,20 @@
                 <div class="modal-body">
                     <form action="/microproject" method="post">
                         <div class="mb-3">
-                            <label for="Mname" class="form-label">Enter Your Name</label>
-                            <input type="text" class="form-control" id="Mname" name="Mname"
-                                aria-describedby="MnameHelp">
+                            <label for="name" class="form-label">Enter Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp">
 
-                            <label for="Menrollmentno" class="form-label">Enter Your Enrollment Number</label>
-                            <input type="text" class="form-control" id="Menrollmentno" name="Menrollmentno"
-                                aria-describedby="MenrollmentnoHelp">
+                            <label for="enrollmentno" class="form-label">Enter Your Enrollment Number</label>
+                            <input type="text" class="form-control" id="enrollmentno" name="enrollmentno"
+                                aria-describedby="enrollmentnoHelp">
 
-                            <label for="Mrollno" class="form-label">Enter Your Roll Number</label>
-                            <input type="text" class="form-control" id="Mrollno" name="Mrollno"
-                                aria-describedby="MrollnoHelp">
+                            <label for="rollno" class="form-label">Enter Your Roll Number</label>
+                            <input type="text" class="form-control" id="rollno" name="rollno"
+                                aria-describedby="rollnoHelp">
 
-                            <label for="Mteacher" class="form-label">Enter Your Teacher Name</label>
-                            <input type="text" class="form-control" id="Mteacher" name="Mteacher"
-                                aria-describedby="MteacherHelp">
+                            <label for="teacher" class="form-label">Enter Your Teacher Name</label>
+                            <input type="text" class="form-control" id="teacher" name="teacher"
+                                aria-describedby="teacherHelp">
                         </div>
                         <button type="submit" class="btn btn-primary">Done</button>
                     </form>
@@ -187,7 +187,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="css" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="CivilCertificate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -196,18 +196,74 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="/mcss" method="post">
-                        <label for="mcssname" class="form-label">Enter Your Name</label>
-                        <input type="text" class="form-control" id="mcssname" name="mcssname" aria-describedby="mcssnameHelp">
+                    <form action="/civilcertificate" method="post">
+                        <div class="mb-3">
+                            <label for="microprojecttitle" class="form-label">Enter Your Microproject Title</label>
+                            <input type="text" class="form-control" id="microprojecttitle" name="MicroprojectTitle" aria-describedby="microprojecttitleHelp">
 
-                        <label for="mcssenrollment" class="form-label">Enter Your Enrollment Number</label>
-                        <input type="text" class="form-control" id="mcssenrollment" name="mcssenrollment" aria-describedby="mcssenrollmentHelp">
+                            <!-- Year -->
+                            <label for="yr" class="form-label">Enter Your Year</label>
+                            <input type="text" class="form-control" id="yr" name="yr" aria-describedby="yrHelp">
 
-                        <label for="mcssenrollno" class="form-label">Enter Your Roll Number</label>
-                        <input type="text" class="form-control" id="mcssenrollno" name="mcssenrollno" aria-describedby="mcssenrollnoHelp">
+                            <!-- Names Of Students -->
+                            <label for="STUD_NAME" class="form-label">Enter Your First Student Member Name</label>
+                            <input type="text" class="form-control" id="STUD_NAME" name="stud_name"
+                                aria-describedby="STUD_NAMEHelp">
 
-                        <label for="mcssteacher" class="form-label">Enter Your Teacher Name</label>
-                        <input type="text" class="form-control" id="mcssteacher" name="mcssteacher" aria-describedby="mcssteacherHelp">
+                            <label for="stdName2" class="form-label">Enter Your Second Student Member Name</label>
+                            <input type="text" class="form-control" id="stdName2" name="stdName2"
+                                aria-describedby="stdName2Help">
+
+                            <label for="stdName3" class="form-label">Enter Your Third Student Member Name</label>
+                            <input type="text" class="form-control" id="stdName3" name="stdName3"
+                                aria-describedby="stdName3Help">
+
+                            <label for="stdName4" class="form-label">Enter Your Fourth Student Member Name</label>
+                            <input type="text" class="form-control" id="stdName4" name="stdName4"
+                                aria-describedby="stdName4Help">
+
+                            <!-- Enrollment Numbers of Student -->
+                            <label for="STUD_ENR" class="form-label">Enter Your First Student Member Enrollment Number</label>
+                            <input type="text" class="form-control" id="STUD_ENR" name="stud_enr"
+                                aria-describedby="STUD_ENRHelp">
+
+                            <label for="stdEnr2" class="form-label">Enter Your Second Student Member Enrollment Number</label>
+                            <input type="text" class="form-control" id="stdEnr2" name="stdEnr2"
+                                aria-describedby="stdEnr2Help">
+
+                            <label for="stdEnr3" class="form-label">Enter Your Third Student Member Enrollment Number</label>
+                            <input type="text" class="form-control" id="stdEnr3" name="stdEnr3"
+                                aria-describedby="stdEnr3Help">
+
+                            <label for="stdEnr4" class="form-label">Enter Your Fourth Student Member Enrollment Number</label>
+                            <input type="text" class="form-control" id="stdEnr4" name="stdEnr4"
+                                aria-describedby="stdEnr4Help">
+
+                            <!-- Name of Profesor -->
+                            <label for="profSirName" class="form-label">Enter Your Teacher Number</label>
+                            <input type="text" class="form-control" id="profSirName" name="profSirName"
+                                aria-describedby="profSirNameHelp">
+
+                            <!-- Subject -->
+                            <label for="Subject" class="form-label">Enter Your Subject With Code</label>
+                            <input type="text" class="form-control" id="Subject" name="Subject"
+                                aria-describedby="SubjectHelp">
+
+                            <!-- HOD -->
+                            <label for="HOD" class="form-label">Enter Your HOD Name</label>
+                            <input type="text" class="form-control" id="HOD" name="hod"
+                                aria-describedby="HODHelp">
+
+                            <!-- Principal -->
+                            <label for="Principal" class="form-label">Enter Your Principal Name</label>
+                            <input type="text" class="form-control" id="Principal" name="Principal"
+                                aria-describedby="PrincipalHelp">
+
+                            <!-- Semester -->
+                            <label for="sem" class="form-label">Enter Your Sememster</label>
+                            <input type="text" class="form-control" id="sem" name="sem"
+                                aria-describedby="semHelp">
+                        </div>
                         <button type="submit" class="btn btn-primary">Done</button>
                     </form>
                 </div>
