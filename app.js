@@ -25,7 +25,7 @@ app.get("/certificate", (req, res)=>{
 app.post("/certificate", (req, res) => {
     console.log(req.body);
     try {
-        const templateFile = fs.readFileSync(path.resolve(__dirname, './public1/templateDocx/Sample_template_certificate.docx'), 'binary');
+        const templateFile = fs.readFileSync(path.resolve(__dirname, '/public1/templateDocx/Sample_template_certificate.docx'), 'binary');
         const zip = new PizZip(templateFile);
         let outputDocument = new Docxtemplater(zip);
 
@@ -42,7 +42,7 @@ app.post("/certificate", (req, res) => {
         try {
             outputDocument.render()
             let outputDocumentBuffer = outputDocument.getZip().generate({ type: 'nodebuffer' });
-            fs.writeFileSync(path.resolve(__dirname, `./public1/files/computer/certificate/${req.body.name}-computer-certificate.docx`), outputDocumentBuffer);
+            fs.writeFileSync(path.resolve(__dirname, `/public1/files/computer/certificate/${req.body.name}-computer-certificate.docx`), outputDocumentBuffer);
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -52,7 +52,7 @@ app.post("/certificate", (req, res) => {
         console.error(`ERROR Loading Template:`);
         console.error(error);
     }
-    res.download(`./public1/files/computer/certificate/${req.body.name}-computer-certificate.docx`);
+    res.download(`/public1/files/computer/certificate/${req.body.name}-computer-certificate.docx`);
 });
 
 app.get("/microproject", (req, res) => {
@@ -62,7 +62,7 @@ app.get("/microproject", (req, res) => {
 app.post("/microproject", (req, res) => {
     console.log(req.body);
     try {
-        const templateFile = fs.readFileSync(path.resolve(__dirname, './public1/templateDocx/EST.docx'), 'binary');
+        const templateFile = fs.readFileSync(path.resolve(__dirname, '/public1/templateDocx/EST.docx'), 'binary');
         const zip = new PizZip(templateFile);
         let outputDocument = new Docxtemplater(zip);
 
@@ -77,7 +77,7 @@ app.post("/microproject", (req, res) => {
         try {
             outputDocument.render()
             let outputDocumentBuffer = outputDocument.getZip().generate({ type: 'nodebuffer' });
-            fs.writeFileSync(path.resolve(__dirname, `./public1/files/computer/microproject/${req.body.name}-computer-microproject.docx`), outputDocumentBuffer);
+            fs.writeFileSync(path.resolve(__dirname, `/public1/files/computer/microproject/${req.body.name}-computer-microproject.docx`), outputDocumentBuffer);
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -88,7 +88,7 @@ app.post("/microproject", (req, res) => {
         console.log("Error Loading Template:");
         console.log(error);
     }
-    res.download(`./public1/files/computer/microproject/${req.body.name}-computer-microproject.docx`);
+    res.download(`/public1/files/computer/microproject/${req.body.name}-computer-microproject.docx`);
 });
 
 app.get("/civilcertificate", (req, res) => {
@@ -98,7 +98,7 @@ app.get("/civilcertificate", (req, res) => {
 app.post("/civilcertificate", (req, res) => {
     console.log(req.body);
     try {
-        const templateFile = fs.readFileSync(path.resolve(__dirname, './public1/templateDocx/civil_certificate.docx'), 'binary');
+        const templateFile = fs.readFileSync(path.resolve(__dirname, '/public1/templateDocx/civil_certificate.docx'), 'binary');
         const zip = new PizZip(templateFile);
         let outputDocument = new Docxtemplater(zip);
 
@@ -124,7 +124,7 @@ app.post("/civilcertificate", (req, res) => {
         try {
             outputDocument.render()
             let outputDocumentBuffer = outputDocument.getZip().generate({ type: 'nodebuffer' });
-            fs.writeFileSync(path.resolve(__dirname, `./public1/files/civil/certificate/${req.body.stud_name}-civil-certificate.docx`), outputDocumentBuffer);
+            fs.writeFileSync(path.resolve(__dirname, `/public1/files/civil/certificate/${req.body.stud_name}-civil-certificate.docx`), outputDocumentBuffer);
         }
         catch (error) {
             console.error(`ERROR Filling out Template:`);
@@ -135,7 +135,7 @@ app.post("/civilcertificate", (req, res) => {
         console.log("Error Loading Template:");
         console.log(error);
     }
-    res.download(`./public1/files/civil/certificate/${req.body.stud_name}-civil-certificate.docx`);
+    res.download(`/public1/files/civil/certificate/${req.body.stud_name}-civil-certificate.docx`);
 });
 
 
