@@ -16,6 +16,5 @@
     "nodemon": "^3.0.1",
     "pizzip": "^3.1.4"
   },
-  "devDependencies": {},
   "description": ""
 }
